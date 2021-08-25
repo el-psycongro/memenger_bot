@@ -1,8 +1,11 @@
 import os
+from pathlib import Path
+
+
+BASE_DIR = Path().resolve()
 
 # Constants
 API_TOKEN = os.environ.get('API_TOKEN')
-
 
 # Database
 POSTGRES_HOST = os.environ.get('POSTGRES_HOST')

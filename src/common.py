@@ -8,3 +8,4 @@ dp = Dispatcher(bot)
 
 engine = create_async_engine(POSTGRES_URL, future=True)
 Session = sessionmaker(engine, expire_on_commit=False, class_=AsyncSession)
+bot['sessionmaker'] = Session

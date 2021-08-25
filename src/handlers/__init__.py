@@ -1,5 +1,5 @@
+from . import cmd_start
 from . import echo
-from . import start
 
 
-__all__ = ["echo", "start"]
+__all__ = ["cmd_start", "echo"]
