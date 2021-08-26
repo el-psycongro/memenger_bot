@@ -13,13 +13,16 @@ async def main():
         await conn.run_sync(Base.metadata.create_all)
 
     # Apscheduler
-    from services.sheduler import scheduler
+    from schedulers.scheduler import scheduler
     scheduler.start()
 
     # Start bot
     import handlers
     from common import dp, bot
+    from utils.commands import set_commands
+
     try:
+        await set_commands()
         await dp.start_polling()
     finally:
         scheduler.shutdown()
