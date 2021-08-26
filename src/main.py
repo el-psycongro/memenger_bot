@@ -20,8 +20,10 @@ async def main():
     import handlers
     from common import dp, bot
     from utils.commands import set_commands
+    from schedulers.workers import memenger_send
 
     try:
+        #scheduler.add_job(func=memenger_send, trigger='interval', args=[str(1342614252)], minutes=1)
         await set_commands()
         await dp.start_polling()
     finally:

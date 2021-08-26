@@ -4,6 +4,9 @@ from apscheduler.jobstores.sqlalchemy import SQLAlchemyJobStore
 import pytz
 import config
 
+
+kiev_tz = pytz.timezone('Europe/Kiev')
+
 jobstores = {
     'default': SQLAlchemyJobStore(url=config.POSTGRES_URL.replace('+asyncpg', '')),
 }
@@ -15,5 +18,5 @@ executors = {
 job_defaults = {"coalesce": False, "max_instances": 3, "misfire_grace_time": 3600}
 
 scheduler = AsyncIOScheduler(
-    jobstores=jobstores, executors=executors, job_defaults=job_defaults, timezone=pytz.utc
+    jobstores=jobstores, executors=executors, job_defaults=job_defaults, timezone=kiev_tz
 )

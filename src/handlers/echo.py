@@ -1,5 +1,5 @@
 from aiogram import types
-from main import dp
+from common import dp
 
 
 @dp.message_handler()

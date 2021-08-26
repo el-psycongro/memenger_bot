@@ -1,5 +1,5 @@
 from aiogram import types
-from main import dp
+from common import dp
 from models.models import User, Chat
 from sqlalchemy.orm import Session
 
